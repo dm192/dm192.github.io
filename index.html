@@ -9,14 +9,20 @@
             margin:0;
             padding:0;
             background-color:#f7f7f7;
-        }
-        .container {
-            max-width:800px;
-            margin:0 auto;
-            padding:20px;
-            background-color:#fff;
-            box-shadow:0 0 10px #ccc;
-        }
+   .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #ccc;
+  
+  /* 将容器相对于父元素水平和垂直居中 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
         .header {
             display:flex;
             justify-content:space-between;
