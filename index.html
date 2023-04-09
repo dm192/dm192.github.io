@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>冷饮 Minecraft 服务器</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
       /* 居中 */
       body {
@@ -10,8 +11,8 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        overflow-x: scroll; /* 添加横向滚动 */
-        scroll-snap-type: x mandatory; /* 添加强制性对齐 */
+        overflow: hidden; /* 添加控制滚动 */
+        scroll-snap-type: x mandatory;
       }
       
       /* 背景图1 */
@@ -21,7 +22,7 @@
         background-image: url('minecraft_bg_1.jpg');
         background-position: center;
         background-size: cover;
-        scroll-snap-align: start; /* 添加对齐效果 */
+        scroll-snap-align: start;
       }
       
       /* 背景图2 */
@@ -31,7 +32,7 @@
         background-image: url('minecraft_bg_2.jpg');
         background-position: center;
         background-size: cover;
-        scroll-snap-align: start; /* 添加对齐效果 */
+        scroll-snap-align: start;
       }
       
       /* 背景图3 */
@@ -41,7 +42,7 @@
         background-image: url('minecraft_bg_3.jpg');
         background-position: center top;
         background-size: cover;
-        scroll-snap-align: start; /* 添加对齐效果 */
+        scroll-snap-align: start;
       }
       
       /* 圆角半透明文本框 */
@@ -63,19 +64,21 @@
         text-decoration: none;
         background-color: #428bca;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        transition: all 0.2s; /* 添加过渡效果 */
+        transition: all 0.2s;
       }
       
       /* 鼠标悬停时的按钮样式 */
       .button:hover {
-        transform: scale(1.1); /* 添加变大动态效果 */
+        transform: scale(1.1);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* 添加阴影效果 */
+        outline: 2px solid #fff; /* 添加边框样式 */
+        outline-offset: -2px;
       }
       
       .button:active {
         background-color: #3366cc;
         box-shadow: inset 0 1px 6px rgba(0,0,0,0.3);
       }
-      
     </style>
   </head>
   
@@ -112,5 +115,4 @@
       }
     </script>
   </body>
-  
 </html>
