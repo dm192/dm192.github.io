@@ -37,7 +37,6 @@
         background-color: #3366cc;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
       }
-
     </style>
   </head>
   <body>
@@ -60,6 +59,9 @@
         dummy.select();
         document.execCommand("copy");
         document.body.removeChild(dummy);
+        
+        // 提示结果
+        alert("已成功复制服务器地址：" + text);
       }
     </script>
     
