@@ -10,7 +10,6 @@
         align-items: center;
         height: 100vh;
         margin: 0;
-        animation: bg-animation 3s infinite; /* 添加动画属性 */
       }
       
       /* 圆角半透明文本框 */
@@ -32,11 +31,12 @@
         text-decoration: none;
         background-color: #428bca;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+        transition: all 0.2s; /* 添加过渡效果 */
       }
       
       /* 鼠标悬停时的按钮样式 */
       .button:hover {
-        transform: scale(1.2);
+        transform: scale(1.1); /* 添加变大动态效果 */
       }
       
       .button:active {
@@ -62,21 +62,6 @@
         } 
       }
       
-      /* 定义背景图渐变动画 */
-      @keyframes bg-animation {
-        0% {
-          background-image: url('minecraft_bg_1.jpg');
-        }
-        33.33% {
-          background-image: url('minecraft_bg_2.jpg');
-        }
-        66.66% {
-          background-image: url('minecraft_bg_3.jpg');
-        }
-        100% {
-          background-image: url('minecraft_bg_1.jpg');
-        }
-      }
     </style>
   </head>
   <body>
@@ -103,20 +88,6 @@
         // 提示结果
         alert("已成功复制服务器地址：" + text);
       }
-      
-      // 每隔3秒钟切换背景图，并避免页面闪烁
-      setInterval(function() {
-        // 将背景图透明度设置为0
-        document.body.style.opacity = 0;
-
-        // 通过重新加载页面来切换背景图
-        location.reload(true);
-      }, 3000);
-
-      // 监听页面加载事件，当背景图加载完毕后，将其透明度设置回1
-      window.addEventListener('load', function() {
-        document.body.style.opacity = 1;
-      });
     </script>
   </body>
 </html>
