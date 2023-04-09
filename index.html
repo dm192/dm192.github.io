@@ -1,109 +1,59 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
-<head>
-    <meta charset="UTF-8">
+<html>
+  <head>
     <title>冷饮 Minecraft 服务器</title>
-    <style type="text/css">
-        body {
-            font-family:'Microsoft YaHei', sans-serif;
-            margin:0;
-            padding:0;
-            background-color:#f7f7f7;
-   .container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 0 10px #ccc;
-  
-  /* 将容器相对于父元素水平和垂直居中 */
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-        .header {
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            margin-bottom:20px;
-        }
-        .logo {
-            font-size:30px;
-            font-weight:bold;
-            color:#333;
-            text-decoration:none;
-        }
-        .join-group {
-            display:inline-block;
-            padding:6px 12px;
-            font-size:14px;
-            font-weight:bold;
-            color:#fff;
-            background-color:#1e90ff;
-            border-radius:4px;
-            text-decoration:none;
-        }
-        .join-group:hover {
-            background-color:#0079BF;
-        }
-        .server-address {
-            display:inline-block;
-            margin-top:20px;
-            padding:10px;
-            font-size:16px;
-            font-weight:bold;
-            color:#333;
-            background-color:#f7f7f7;
-            border:1px solid #ccc;
-            border-radius:4px;
-        }
-        .contact-info {
-            margin-top:20px;
-            padding:10px;
-            font-size:16px;
-            color:#333;
-            background-color:#f7f7f7;
-            border:1px solid #ccc;
-            border-radius:4px;
-            line-height:1.5;
-        }
-        .contact-info a {
-            color:#1e90ff;
-            text-decoration:none;
-        }
-        .contact-info a:hover {
-            text-decoration:underline;
-        }
+    <style>
+      /* 居中 */
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      
+      /* 圆角半透明文本框 */
+      .box {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 5px;
+        padding: 20px;
+        text-align: center;
+      }
+      
+      /* 按钮样式 */
+      .button {
+        background-color: #428bca;
+        color: #fff;
+        border-radius: 3px;
+        padding: 10px;
+        text-decoration: none;
+        font-weight: bold;
+        margin: 10px;
+        display: inline-block;
+      }
     </style>
-</head>
-<body>
-    <div class="container">
-        <div class="header">
-            <a href="#" class="logo">冷饮 Minecraft 服务器</a>
-            <a href="https://jingyan.baidu.com/article/fb48e8bef0a1b46e622e14cf.html" target="_blank" class="join-group">快捷加入 QQ 群</a>
-        </div>
-        <div class="server-address">
-            点击下方按钮或手动复制服务器地址，粘贴到 Minecraft 客户端即可。
-            <br>
-            <button onclick="copyAddress()">一键复制服务器地址</button>
-            <textarea id="serverAddress" readonly>mc.drinkandchill.club</textarea>
-        </div>
-        <div class="contact-info">
-            如有问题或建议欢迎联系我们：
-            <br>
-            邮箱：<a href="mailto:contact@drinkandchill.club" target="_blank">contact@drinkandchill.club</a>
-            <br>
-            微信公众号：<a href="#" target="_blank">冷饮 Minecraft 服务器</a>
-        </div>
+  </head>
+  <body>
+    <div class="box">
+      <h1>冷饮 Minecraft 服务器</h1>
+      <p>欢迎来到我们的服务器！</p>
+      <p>服务器地址：mc.example.com</p>
+      <button class="button" onclick="copyToClipboard('mc.example.com')">复制地址</button>
+      <p>加入QQ群：123456789</p>
+      <a href="https://jq.qq.com/?_wv=1027&k=123456789" class="button">快捷加入</a>
+      <p>联系方式：admin@example.com</p>
     </div>
-    <script type="text/javascript">
-        function copyAddress() {
-            var address = document.getElementById('serverAddress');
-            address.select();
-            document.execCommand('copy');
-        }
+    
+    <script>
+      // 复制文本到剪贴板
+      function copyToClipboard(text) {
+        var dummy = document.createElement("textarea");
+        document.body.appendChild(dummy);
+        dummy.value = text;
+        dummy.select();
+        document.execCommand("copy");
+        document.body.removeChild(dummy);
+      }
     </script>
-</body>
+  </body>
 </html>
