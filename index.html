@@ -10,6 +10,38 @@
         align-items: center;
         height: 100vh;
         margin: 0;
+        overflow-x: scroll; /* 添加横向滚动 */
+        scroll-snap-type: x mandatory; /* 添加强制性对齐 */
+      }
+      
+      /* 背景图1 */
+      .bg1 {
+        height: 100%;
+        min-width: 100vw;
+        background-image: url('minecraft_bg_1.jpg');
+        background-position: center;
+        background-size: cover;
+        scroll-snap-align: start; /* 添加对齐效果 */
+      }
+      
+      /* 背景图2 */
+      .bg2 {
+        height: 100%;
+        min-width: 100vw;
+        background-image: url('minecraft_bg_2.jpg');
+        background-position: center;
+        background-size: cover;
+        scroll-snap-align: start; /* 添加对齐效果 */
+      }
+      
+      /* 背景图3 */
+      .bg3 {
+        height: 100%;
+        min-width: 100vw;
+        background-image: url('minecraft_bg_3.jpg');
+        background-position: center top;
+        background-size: cover;
+        scroll-snap-align: start; /* 添加对齐效果 */
       }
       
       /* 圆角半透明文本框 */
@@ -44,36 +76,26 @@
         box-shadow: inset 0 1px 6px rgba(0,0,0,0.3);
       }
       
-      /* 添加背景图2 */
-      @media (min-width: 768px) {
-        body {
-          background-image: url('minecraft_bg_2.jpg');
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-          background-position: center;
-        } 
-      }
-      
-      /* 添加背景图3 */
-      @media (min-width: 1024px) {
-        body {
-          background-image: url('minecraft_bg_3.jpg');
-          background-position: center top;
-        } 
-      }
-      
     </style>
   </head>
+  
   <body>
-    <div class="box">
-      <h1>冷饮 Minecraft 服务器</h1>
-      <p>欢迎来到我们的服务器！</p>
-      <p>服务器地址：mc.example.com</p>
-      <button class="button" onclick="copyToClipboard('mc.example.com')">复制地址</button>
-      <p>加入QQ群：123456789</p>
-      <a href="https://jq.qq.com/?_wv=1027&k=123456789" class="button">快捷加入</a>
-      <p>联系方式：admin@example.com</p>
+    
+    <div class="bg1"></div>
+    
+    <div class="bg2">
+      <div class="box">
+        <h1>冷饮 Minecraft 服务器</h1>
+        <p>欢迎来到我们的服务器！</p>
+        <p>服务器地址：mc.example.com</p>
+        <button class="button" onclick="copyToClipboard('mc.example.com')">复制地址</button>
+        <p>加入QQ群：123456789</p>
+        <a href="https://jq.qq.com/?_wv=1027&k=123456789" class="button">快捷加入</a>
+        <p>联系方式：admin@example.com</p>
+      </div>
     </div>
+    
+    <div class="bg3"></div>
     
     <script>
       // 复制文本到剪贴板
@@ -90,4 +112,5 @@
       }
     </script>
   </body>
+  
 </html>
