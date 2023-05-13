@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>网页终端</title>
+
+<style>
+
+/* 设置背景颜色和字体颜色 */
+
+body {
+
+background-color: black;
+
+color: white;
+
+}
+
+/* 设置终端框的样式 */
+
+#terminal {
+
+  width: 500px;
+
+  height: 300px;
+
+  margin: 50px auto;
+
+  border-radius: 10px;
+
+  overflow: auto;
+
+  padding: 10px;
+
+  font-family: monospace;
+
+}
+
+/* 设置输入框的样式 */
+
+#input {
+
+  width: 100%;
+
+  height: 30px;
+
+  border: none;
+
+  background-color: transparent;
+
+  outline: none;
+
+  color: white;
+
+  font-size: 16px;
+
+}
+
+/* 改变输入框获得焦点时的边框样式 */
+
+#input:focus {
+
+  border: none;
+
+  outline: none;
+
+}
+
+</style>
+
+<script>
+
+var password = "pwd@114514";
+
+var terminal;
+
+function getPassword() {
+
+  // 获取用户输入密码
+
+  var input = document.getElementById("input");
+
+  var inputPassword = input.value;
+
+  // 验证密码是否正确
+
+  if (password === inputPassword) {
+
+    // 如果密码正确，输出欢迎信息
+
+    appendText("欢迎使用本网页终端！\n");
+
+    // 清空输入框
+
+    input.value = "";
+
+    // 显示发送指令提示
+
+    input.placeholder = "请输入指令";
+
+    input.onkeydown = function(event) {
+
+      if (event.keyCode == 13) {
+
+        sendCommand(input.value);
+
+      }
+
+    };
+
+  } else {
+
+    // 如果密码错误，提示重新输入
+
+    appendText("密码错误，请重新输入！\n");
+
+    // 清空输入框
+
+    input.value = "";
+
+  }
+
+}
+
+function sendCommand(command) {
+
+  // 显示发送的指令
+
+  appendText("$ " + command + "\n");
+
+  // 执行指令并返回结果
+
+  var result = executeCommand(command);
+
+  // 显示执行结果
+
+  appendText(result + "\n");
+
+  // 清空输入框
+
+  document.getElementById("input").value = "";
+
+}
+
+function executeCommand(command) {
+
+  // TODO: 根据指令内容执行相应命令
+
+  // 为了演示，这里只是简单地返回指令内容
+
+  return "执行指令：" + command;
+
+}
+
+function appendText(text) {
+
+  // 获取终端框元素
+
+  terminal = terminal || document.getElementById("terminal");
+
+  // 创建新的文本节点
+
+  var node = document.createTextNode(text);
+
+  // 添加到终端框中
+
+  terminal.appendChild(node);
+
+  // 滚动到底部
+
+  terminal.scrollTop = terminal.scrollHeight;
+
+}
+
+</script>
+
+</head>
+
+<body>
+
+<div id="terminal"></div>
+
+<input type="password" id="input" onkeydown="if (event.keyCode == 13) getPassword();" placeholder="请输入密码">
+
+</body>
+
+</html>
