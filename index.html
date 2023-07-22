@@ -1,124 +1,71 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>冷饮 Minecraft 服务器</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-      /* 居中 */
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        overflow: hidden; /* 添加控制滚动 */
-        scroll-snap-type: x mandatory;
-      }
-      
-      /* 背景图1 */
-      .bg1 {
-        height: 100%;
-        min-width: 100vw;
-        background-image: url('minecraft_bg_1.jpg');
-        background-position: center;
-        background-size: cover;
-        scroll-snap-align: start;
-      }
-      
-      /* 背景图2 */
-      .bg2 {
-        height: 100%;
-        min-width: 100vw;
-        background-image: url('minecraft_bg_2.jpg');
-        background-position: center;
-        background-size: cover;
-        scroll-snap-align: start;
-      }
-      
-      /* 背景图3 */
-      .bg3 {
-        height: 100%;
-        min-width: 100vw;
-        background-image: url('minecraft_bg_3.jpg');
-        background-position: center top;
-        background-size: cover;
-        scroll-snap-align: start;
-      }
-      
-      /* 圆角半透明文本框 */
-      .box {
-        background-color: rgba(255, 255, 255, 0.8);
-        border-radius: 5px;
-        padding: 20px;
-        text-align: center;
-        
-        /* 文本框居中 */
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-      
-      /* 按钮样式 */
-      .button {
-        display: inline-block;
-        padding: 10px;
-        border: none;
-        border-radius: 3px;
-        font-weight: bold;
-        color: #fff;
-        text-decoration: none;
-        background-color: #428bca;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        transition: all 0.2s;
-      }
-      
-      /* 鼠标悬停时的按钮样式 */
-      .button:hover {
-        transform: scale(1.1);
-        text-shadow: 0 1px 2px rgba(0,0,0,0.3); /* 添加阴影效果 */
-        outline: 2px solid #fff; /* 添加边框样式 */
-        outline-offset: -2px;
-      }
-      
-      .button:active {
-        background-color: #3366cc;
-        box-shadow: inset 0 1px 6px rgba(0,0,0,0.3);
-      }
-    </style>
-  </head>
-  
-  <body>
-    
-    <div class="bg1"></div>
-    
-    <div class="bg2">
-      <div class="box">
-        <h1>冷饮 Minecraft 服务器</h1>
-        <p>欢迎来到我们的服务器！</p>
-        <p>服务器地址：mc.example.com</p>
-        <button class="button" onclick="copyToClipboard('mc.example.com')">复制地址</button>
-        <p>加入QQ群：123456789</p>
-        <a href="https://jq.qq.com/?_wv=1027&k=123456789" class="button">快捷加入</a>
-        <p>联系方式：admin@example.com</p>
-      </div>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>冷饮MC官网</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1>冷饮MC官网</h1>
+      <ul>
+        <li><a href="#home">首页</a></li>
+        <li><a href="#about">关于我们</a></li>
+        <li><a href="#services">服务</a></li>
+        <li><a href="#contact">联系我们</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="home">
+    <div class="hero">
+      <h2>欢迎来到冷饮MC官网!</h2>
+      <p>尽情畅玩Mod服务器，与朋友们一起冒险！</p>
+      <a href="#contact" class="btn">加入我们</a>
     </div>
-    
-    <div class="bg3"></div>
-    
-    <script>
-      // 复制文本到剪贴板
-      function copyToClipboard(text) {
-        var dummy = document.createElement("textarea");
-        document.body.appendChild(dummy);
-        dummy.value = text;
-        dummy.select();
-        document.execCommand("copy");
-        document.body.removeChild(dummy);
-        
-        // 提示结果
-        alert("已成功复制服务器地址：" + text);
-      }
-    </script>
-  </body>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <h3>关于我们</h3>
+      <p>冷饮MC致力于打造出精美而又有趣的Mod服务器，为玩家提供一个愉快的游戏环境。我们拥有丰富的Mod选项，且不断更新以保持游戏的新鲜感。</p>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <h3>我们的服务</h3>
+      <ul>
+        <li>多样化的Mod选择</li>
+        <li>友好的社区氛围</li>
+        <li>24/7在线支持</li>
+        <li>定期举办有奖活动</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h3>联系我们</h3>
+      <p>如果您对我们的服务器有任何疑问或建议，请随时联系我们。我们的团队将尽快回复您的消息。</p>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="您的姓名" required>
+        <input type="email" name="email" placeholder="您的邮箱" required>
+        <textarea name="message" placeholder="您的留言" rows="5" required></textarea>
+        <button type="submit">发送</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2023 冷饮MC. 版权所有.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
 </html>
